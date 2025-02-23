@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+      "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Workout date in YYYY-MM-DD format"
+      },
+      "workouts": {
+          "type": "array",
+          "items": {
+              "type": "object",
+              "properties": {
+                  "exercise": {
+                      "type": "string",
+                      "description": "Name of the exercise, e.g., Squat"
+                  },
+                  "reps": {
+                      "type": "number",
+                      "description": "Number of repetitions"
+                  },
+                  "weight": {
+                      "type": "number",
+                      "description": "Weight used, e.g., '80kg' or '100 lbs'"
+                  }
+              },
+              "required": ["exercise", "reps", "weight"]
+          }
+      }
+  },
+  "required": ["date", "workouts"]
+}
